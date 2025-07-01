@@ -206,6 +206,7 @@ jobs:
 
   release:
     name: "release"
+    if: ${{ github.ref_name == 'main' }}
     needs: [build]
     permissions:
       actions: read
