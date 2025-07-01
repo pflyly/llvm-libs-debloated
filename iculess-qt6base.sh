@@ -12,7 +12,8 @@ sed -i -e "s/x86_64/${ARCH}/" \
 	-e 's/-DCMAKE_BUILD_TYPE=RelWithDebInfo/-DCMAKE_BUILD_TYPE=MinSizeRel/' \
 	-e 's/-DFEATURE_journald=ON/-DFEATURE_journald=OFF/' \
 	-e '/-DFEATURE_libproxy=ON \\/a\    -DFEATURE_icu=OFF \\' \
- 	-e '/-DFEATURE_libproxy=ON \\/a\    -DCMAKE_DISABLE_PRECOMPILE_HEADERS=OFF \\' ./PKGBUILD
+ 	-e '/-DFEATURE_libproxy=ON \\/a\    -DFEATURE_precompile_header=OFF \\' \
+  	-e '/-DFEATURE_libproxy=ON \\/a\    -DFEATURE_ccache=ON \\' ./PKGBUILD
 
 case "${ARCH}" in
 	"x86_64")
